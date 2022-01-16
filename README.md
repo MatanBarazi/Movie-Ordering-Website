@@ -16,5 +16,5 @@ Finally, there is an option for payment in credit.
 
 
 ## Screenshots
-<img src="CinemaProject/Screenshots/pic1.JPG" width="680" height="550">
-<img src="CinemaProject/Screenshots/pic2.JPG" width="680" height="550">
+<img src="CinemaProject/Screenshots/pic1.JPG" width="850" height="550">
+<img src="CinemaProject/Screenshots/pic2.JPG" width="850" height="550">
