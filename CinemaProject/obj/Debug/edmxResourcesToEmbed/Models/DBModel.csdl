@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GENRES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="GENRES1" Relationship="CinemaModel.FK_GENRES_GENRES" FromRole="GENRES" ToRole="GENRES1" />
+    <NavigationProperty Name="GENRES2" Relationship="CinemaModel.FK_GENRES_GENRES" FromRole="GENRES1" ToRole="GENRES" />
+    <NavigationProperty Name="MOVIES" Relationship="CinemaModel.FK_MOVIES_GENRES" FromRole="GENRES" ToRole="MOVIES" />
+  </EntityType>
+  <EntityType Name="MOVIES">
+    <Key>
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRICE" Type="Double" Nullable="false" />
+    <Property Name="GENRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AGE_LIMITATION" Type="Int32" />
+    <Property Name="PicturePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LASTDATE" Type="DateTime" Precision="0" />
+    <Property Name="ID" Type="Int32" />
+    <NavigationProperty Name="GENRES" Relationship="CinemaModel.FK_MOVIES_GENRES" FromRole="MOVIES" ToRole="GENRES" />
+  </EntityType>
+  <EntityContainer Name="CinemaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GENRES" EntityType="Self.GENRES" />
+    <EntitySet Name="MOVIES" EntityType="Self.MOVIES" />
+    <AssociationSet Name="FK_GENRES_GENRES" Association="CinemaModel.FK_GENRES_GENRES">
+      <End Role="GENRES" EntitySet="GENRES" />
+      <End Role="GENRES1" EntitySet="GENRES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOVIES_GENRES" Association="CinemaModel.FK_MOVIES_GENRES">
+      <End Role="GENRES" EntitySet="GENRES" />
+      <End Role="MOVIES" EntitySet="MOVIES" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_GENRES_GENRES">
+    <End Type="CinemaModel.GENRES" Role="GENRES" Multiplicity="1" />
+    <End Type="CinemaModel.GENRES" Role="GENRES1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GENRES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GENRES1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOVIES_GENRES">
+    <End Type="CinemaModel.GENRES" Role="GENRES" Multiplicity="0..1" />
+    <End Type="CinemaModel.MOVIES" Role="MOVIES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GENRES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MOVIES">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

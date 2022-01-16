@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CinemaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GENRES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MOVIES">
+    <Key>
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PRICE" Type="float" Nullable="false" />
+    <Property Name="GENRE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AGE_LIMITATION" Type="int" />
+    <Property Name="PicturePath" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="LASTDATE" Type="date" />
+    <Property Name="ID" Type="int" />
+  </EntityType>
+  <Association Name="FK_GENRES_GENRES">
+    <End Role="GENRES" Type="Self.GENRES" Multiplicity="1" />
+    <End Role="GENRES1" Type="Self.GENRES" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="GENRES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GENRES1">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MOVIES_GENRES">
+    <End Role="GENRES" Type="Self.GENRES" Multiplicity="0..1" />
+    <End Role="MOVIES" Type="Self.MOVIES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GENRES">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MOVIES">
+        <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CinemaModelStoreContainer">
+    <EntitySet Name="GENRES" EntityType="Self.GENRES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MOVIES" EntityType="Self.MOVIES" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_GENRES_GENRES" Association="Self.FK_GENRES_GENRES">
+      <End Role="GENRES" EntitySet="GENRES" />
+      <End Role="GENRES1" EntitySet="GENRES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MOVIES_GENRES" Association="Self.FK_MOVIES_GENRES">
+      <End Role="GENRES" EntitySet="GENRES" />
+      <End Role="MOVIES" EntitySet="MOVIES" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

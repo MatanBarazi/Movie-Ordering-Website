@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CinemaModelStoreContainer" CdmEntityContainer="CinemaEntities">
+    <EntitySetMapping Name="GENRES">
+      <EntityTypeMapping TypeName="CinemaModel.GENRES">
+        <MappingFragment StoreEntitySet="GENRES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HALL">
+      <EntityTypeMapping TypeName="CinemaModel.HALL">
+        <MappingFragment StoreEntitySet="HALL">
+          <ScalarProperty Name="HallNumber" ColumnName="HallNumber" />
+          <ScalarProperty Name="Lines" ColumnName="Lines" />
+          <ScalarProperty Name="ChairsInLine" ColumnName="ChairsInLine" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVIES">
+      <EntityTypeMapping TypeName="CinemaModel.MOVIES">
+        <MappingFragment StoreEntitySet="MOVIES">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="GENRE" ColumnName="GENRE" />
+          <ScalarProperty Name="AGE_LIMITAION" ColumnName="AGE_LIMITAION" />
+          <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
+          <ScalarProperty Name="LASTDATE" ColumnName="LASTDATE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AmountOfTime" ColumnName="AmountOfTime" />
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="CinemaModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Permission" ColumnName="Permission" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SCHEDULE">
+      <EntityTypeMapping TypeName="CinemaModel.SCHEDULE">
+        <MappingFragment StoreEntitySet="SCHEDULE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Movie" ColumnName="Movie" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="HallNumber" ColumnName="HallNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="CinemaModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="Movie" ColumnName="Movie" />
+          <ScalarProperty Name="Chair" ColumnName="Chair" />
+          <ScalarProperty Name="Line" ColumnName="Line" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="HallNumber" ColumnName="HallNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CinemaModelStoreContainer" CdmEntityContainer="CinemaEntities">
+    <EntitySetMapping Name="GENRES">
+      <EntityTypeMapping TypeName="CinemaModel.GENRES">
+        <MappingFragment StoreEntitySet="GENRES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MOVIES">
+      <EntityTypeMapping TypeName="CinemaModel.MOVIES">
+        <MappingFragment StoreEntitySet="MOVIES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="GENRE" ColumnName="GENRE" />
+          <ScalarProperty Name="AGE_LIMITATION" ColumnName="AGE_LIMITATION" />
+          <ScalarProperty Name="PicturePath" ColumnName="PicturePath" />
+          <ScalarProperty Name="LASTDATE" ColumnName="LASTDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
