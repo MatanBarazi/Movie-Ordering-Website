@@ -15,5 +15,10 @@ Finally, there is an option for payment in credit.
 
 ## Screenshots
 * Screens for regular and admin users:
+<img src="CinemaProject/Screenshots/login.png" width="850" height="550">
+<img src="CinemaProject/Screenshots/MoiveLibrary.png" width="850" height="550">
+<img src="CinemaProject/Screenshots/bookingSeat.png" width="850" height="550">
 
 * Screens for admin users:
+<img src="CinemaProject/Screenshots/addMovie1.png" width="850" height="550">
+<img src="CinemaProject/Screenshots/addMovie2.png" width="850" height="550">
