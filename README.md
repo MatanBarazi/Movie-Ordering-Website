@@ -16,3 +16,6 @@ Finally, there is an option for payment in credit.
 
 
 ## Screenshots
+* Screens for regular and admin users:
+
+* Screens for admin users:
