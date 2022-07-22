@@ -9,7 +9,8 @@ Finally, there is an option for payment in credit.
 ## 🛠 Skills
 * ASP.NET MVC 5
 * Entity Framework
-* jQuery
+* jQuery & JS
+* C#
 * Bootstrap
 
 
